@@ -1,0 +1,23 @@
+* {
+    font-family:"Press Start 2P";
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    background-color: rgb(83, 83, 83);
+    border-bottom: 5px solid cyan;
+    width: 100%;
+    padding: 20px;
+}
+
+.header ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+main section {
+    background-color: rgb(83, 83, 83);
+    margin: 20px;
+}
