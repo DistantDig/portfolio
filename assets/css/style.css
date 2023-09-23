@@ -1,14 +1,18 @@
+:root {
+    --colorMain: rgb(83, 83, 83);
+    --colorBorder: cyan;
+    --border-curve: 15px;
+}
+
 * {
     font-family:"Press Start 2P";
-    padding: 0;
-    margin: 0;
 }
 
 .header {
-    background-color: rgb(83, 83, 83);
-    border-bottom: 5px solid cyan;
-    width: 100%;
-    padding: 20px;
+    background-color: var(--colorMain);
+    border-bottom: 5px solid var(--colorBorder);
+    padding: 10px;
+    margin: 0px 0px 20px 0px;
 }
 
 .header ul {
@@ -17,7 +21,62 @@
     gap: 30px;
 }
 
-main section {
-    background-color: rgb(83, 83, 83);
+main {
+    display: grid;
+    grid-template-columns: repeat(5, 22%);
+    grid-template-rows: repeat(8, 100px);
+    gap: 20px;
+    justify-content: flex-end;
+}
+
+aside {
+    display: block;
+    background-color: var(--colorMain);
     margin: 20px;
+    width: 20%;
+}
+
+.block {
+    display: block;
+    background-color: var(--colorMain);
+    grid-column: 3 / span 3;
+    border-radius: var(--border-curve);
+}
+
+p {
+    padding: 10px;
+    font-size: larger;
+}
+
+.about-me {
+    grid-row: 1 / span 2;
+}
+
+.resume {
+    grid-row: 6 / span 2;
+}
+
+.contanct-me {
+    grid-row: 8 / span 2;
+}
+
+/* My Work Cards */
+
+.my-work {
+    display: flex;
+    flex-wrap: wrap;
+    grid-row: 3 / span 3;
+}
+
+.card {
+    border: 5px solid var(--colorBorder);
+    margin: 10px;
+}
+
+.card:first-child {
+    width: 100%;
+}
+
+.card:not(:first-child) {
+    flex: 1;
 }
