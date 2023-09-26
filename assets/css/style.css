@@ -1,11 +1,13 @@
+/* Universial */
+
 :root {
     --color-main: rgb(83, 83, 83);
     --color-second: cyan;
     --color-third: rgb(190, 104, 190);
     --border-curve: 15px;
     --box-color: rgb(0, 16, 46, 0.5);
-    --box-border: rgb(0, 0, 0);
-    --text-color: white;
+    --box-border: 5px ridge var(--color-third);
+    --text-color: rgb(255, 255, 255);
 }
 
 * {
@@ -14,16 +16,69 @@
     padding: 0px;
 }
 
+
+/* Header */
+
 .header {
     text-align: center;
     padding: 10px;
     background-color: var(--color-main);
-    border-bottom: 8px ridge var(--box-border);
+    border-bottom: 8px ridge var(--color-third);
 }
 
 h1 {
     font-size: 50px;
     color: var(--text-color);
+}
+
+
+/* Main Body */
+
+main {
+    display: grid;
+    grid-template-columns: 25% 70%;
+    justify-content: space-evenly;
+    background-color: var(--color-main);
+    border-top: 8px groove var(--color-third);
+    padding-top: 10px;
+}
+
+.background-image {
+    width: 100%;
+    height: 700px;
+    background-image: url("../images/me_at_desk.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.block {
+    display: block;
+    background-color: var(--box-color);
+    border-radius: var(--border-curve);
+    width: 100%;
+    color: var(--text-color);
+    border: var(--box-border);
+    margin: 2% 0;
+}
+
+h2 {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 75px;
+    padding: 15px 0 0 0;
+    background-color: var(--box-color);
+    border: var(--box-border);
+    border-radius: var(--border-curve);
+    color: var(--text-color);
+    font-size: 30px;
+    text-align: center;
+    margin: auto 0;
+}
+
+p, li {
+    padding: 10px;
+    font-size: xx-large;
 }
 
 ul {
@@ -35,75 +90,13 @@ ul {
     list-style-type: none;
 }
 
-header ul li {
+.violet-link {
+    padding: 10px;
     background-color: var(--color-third);
     border-radius: var(--border-curve);
 }
 
-.background-image {
-    width: 100%;
-    height: 700px;
-    background-image: url("../images/me_at_desk.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-main {
-    display: grid;
-    grid-template-columns: 25% 70%;
-    gap: 2%;
-    justify-content: space-around;
-    background-color: var(--color-main);
-    border-top: 8px groove var(--box-border);
-    padding-top: 10px;
-}
-
-.block {
-    display: block;
-    background-color: var(--box-color);
-    border-radius: var(--border-curve);
-    width: 100%;
-    color: var(--text-color);
-    border: 2px solid var(--box-border);
-}
-
-h2 {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 75px;
-    padding: 15px 0 0 5%;
-    background-color: var(--box-color);
-    border: 2px solid var(--box-border);
-    border-radius: var(--border-curve);
-    color: var(--text-color);
-    font-size: 30px;
-}
-
-p, li {
-    padding: 10px;
-    font-size: xx-large;
-}
-
-/* My Work Cards */
-
-.my-work {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.card {
-    border: 5px solid var(--color-border);
-    margin: 10px;
-}
-
-.card:first-child {
-    width: 100%;
-}
-
-.card:not(:first-child) {
-    flex: 1;
-}
+/* Media Change */
 
 @media screen and (max-width: 750px) {
     main {
@@ -127,8 +120,154 @@ p, li {
         width: 95%;
         padding: 15px 0 0 5%;
         background-color: var(--box-color);
-        border: 2px solid var(--box-border);
+        border: var(--box-border);
         border-radius: var(--border-curve);
         color: var(--text-color);
     }
+}
+
+
+/* My Work Cards */
+
+.my-work {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h3 {
+    text-align: center;
+    position: relative;
+    font-size: 25px;
+}
+
+.card {
+    border: var(--box-border);
+    border-radius: var(--border-curve);
+    height: 300px;
+    margin: 10px 0;
+}
+
+.card:first-child {
+    width: 100%;
+}
+
+.card:not(:first-child) {
+    flex: 1;
+}
+
+
+/* Immersive Jungles Project */
+
+.immersive-jungles-image {
+    display: block;
+    border-radius: var(--border-curve);
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.immersive-jungles-image:hover {
+    box-shadow: 0 0 5px 5px var(--color-third);
+}
+
+.card a:hover #immersive-jungles-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+#immersive-jungles-content {
+    visibility: collapse;
+    opacity: 0;
+    transition: opacity 0.3s;
+    background-color: var(--color-third);
+    color: var(--text-color);
+    text-align: center;
+    border: var(--box-border);
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    width: 280px;
+    left: 50%;
+}
+
+#immersive-jungles-content p {
+    font-size: larger;
+}
+
+
+/* DnD Origins Project */
+
+.dnd-origins-image {
+    display: block;
+    border-radius: var(--border-curve);
+    margin-left: auto;
+    margin-right: auto;
+    height: 80%;
+
+}
+
+.dnd-origins-image:hover {
+    box-shadow: 0 0 5px 5px var(--color-third);
+}
+
+.card a:hover #dnd-origins-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+#dnd-origins-content {
+    visibility: collapse;
+    opacity: 0;
+    transition: opacity 0.3s;
+    background-color: var(--color-third);
+    color: var(--text-color);
+    text-align: center;
+    border: var(--box-border);
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    width: 280px;
+}
+
+#dnd-origins-content p {
+    font-size: larger;
+}
+
+
+/* TreeLib Project */
+
+.treelib-image {
+    display: block;
+    border-radius: var(--border-curve);
+    margin-left: auto;
+    margin-right: auto;
+    height: 80%;
+}
+
+.treelib-image:hover {
+    box-shadow: 0 0 5px 5px var(--color-third);
+}
+
+.card a:hover #treelib-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+#treelib-content {
+    visibility: collapse;
+    opacity: 0;
+    transition: opacity 0.3s;
+    background-color: var(--color-third);
+    color: var(--text-color);
+    text-align: center;
+    border: var(--box-border);
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    width: 280px;
+}
+
+#treelib-content p {
+    font-size: larger;
 }
