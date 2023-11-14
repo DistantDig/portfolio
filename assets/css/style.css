@@ -317,3 +317,43 @@ h3 {
 #aid-content p {
     font-size: larger;
 }
+
+/* Gym Flow Project */
+
+.gym-flow-image {
+    display: block;
+    border-radius: var(--border-curve);
+    margin-left: auto;
+    margin-right: auto;
+    height: 80%;
+    background-color: #000000;
+    text-align: center;
+}
+
+.gym-flow-image:hover {
+    box-shadow: 0 0 5px 5px var(--color-third);
+}
+
+.card a:hover #gym-flow-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+#gym-flow-content {
+    visibility: collapse;
+    opacity: 0;
+    transition: opacity 0.3s;
+    background-image: linear-gradient(var(--box-color), var(--color-third));
+    color: var(--text-color);
+    text-align: center;
+    border: var(--box-border);
+    border-radius: var(--border-curve);
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    width: 280px;
+}
+
+#gym-flow-content p {
+    font-size: larger;
+}
